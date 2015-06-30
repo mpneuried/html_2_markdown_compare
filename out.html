@@ -1,0 +1,511 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Compare HTML 2 Markdown</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<style>
+			.wmquot, blockquote{
+				border-left: 5px solid blue;
+				font-size: 17.5px;
+				margin: 0 0 20px;
+				padding: 10px 20px;
+				font-size: 14px;
+			}
+			.wmquot{
+				border-left: 5px solid red;
+			}
+			code{
+				overflow: hidden;
+				white-space: pre-wrap;
+				display:block;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="table table-bordered table-hover">
+			<tr>
+				<th width="4%"></th>
+				<th width="24%">Original</th>
+				<th width="24%"><a href="https://github.com/domchristie/to-markdown">to-markdown</a></th>
+				<th width="24%"><a href="https://www.npmjs.com/package/html-md">html-md</a></th>
+				<th width="24%"><a href="https://www.npmjs.com/package/html2markdown">html2markdown</a></th>
+			</tr><tr><td>1</td><td><span><strong>BOLD</td><td><p><span><strong>BOLD</strong></span></p>
+</td><td><p><strong>BOLD</strong></p>
+</td><td><p> <strong>BOLD</strong> </p>
+</td></tr><tr><td>1 SOURCE</td><td><code id="org0" data-idx="0" class="org">&lt;span&gt;&lt;strong&gt;BOLD</code></td><td class="md"><code id="tm0" class="tm">&lt;span&gt;**BOLD**&lt;/span&gt;</code></td><td class="md"><code>**BOLD**</code></td><td class="md"><code> **BOLD** </code></td></tr><tr><td>2</td><td><ul><li>a</li><li>b</li></ul><hr><ol><li>x</li><li>y</li></ol></td><td><ul>
+<li>a</li>
+<li>b</li>
+</ul>
+<hr>
+<ol>
+<li>x</li>
+<li>y</li>
+</ol>
+</td><td><ul>
+<li>a</li>
+<li>b</li>
+</ul>
+<hr>
+<ol>
+<li>x</li>
+<li>y</li>
+</ol>
+</td><td><ul>
+<li>a</li>
+<li>b</li>
+</ul>
+<hr>
+<ol>
+<li>x</li>
+<li>y</li>
+</ol>
+</td></tr><tr><td>2 SOURCE</td><td><code id="org1" data-idx="1" class="org">&lt;ul&gt;&lt;li&gt;a&lt;/li&gt;&lt;li&gt;b&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ol&gt;&lt;li&gt;x&lt;/li&gt;&lt;li&gt;y&lt;/li&gt;&lt;/ol&gt;</code></td><td class="md"><code id="tm1" class="tm">*   a
+*   b
+
+* * *
+
+1.  x
+2.  y</code></td><td class="md"><code>* a
+* b
+
+---
+
+1. x
+2. y</code></td><td class="md"><code>* a
+* b
+
+- - -
+
+1. x
+1. y
+</code></td></tr><tr><td>3</td><td><h3>Emoji test</h3> <img class="emoji" title=":heart:" alt="heart" src="node_modules/emoji-images/pngs/heart.png" height="30" /> and <img class="emoji" title=":trollface:" alt="trollface" src="node_modules/emoji-images/pngs/trollface.png" height="30" /></td><td><h3 id="emoji-test">Emoji test</h3>
+<p><img src="node_modules/emoji-images/pngs/heart.png" alt="heart" title=":heart:">and<img src="node_modules/emoji-images/pngs/trollface.png" alt="trollface" title=":trollface:"></p>
+</td><td><h3 id="emoji-test-heart-node_modules-emoji-images-pngs-heart-png-and-trollface-node_modules-emoji-images-pngs-trollface-png-">Emoji test <img src="node_modules/emoji-images/pngs/heart.png" alt="heart"> and <img src="node_modules/emoji-images/pngs/trollface.png" alt="trollface"></h3>
+</td><td><h3 id="emoji-test">Emoji test</h3>
+<p><img src="node_modules/emoji-images/pngs/heart.png" alt="heart"></p>
+<p>and </p>
+<p><img src="node_modules/emoji-images/pngs/trollface.png" alt="trollface"></p>
+</td></tr><tr><td>3 SOURCE</td><td><code id="org2" data-idx="2" class="org">&lt;h3&gt;Emoji test&lt;/h3&gt; &lt;img class=&quot;emoji&quot; title=&quot;:heart:&quot; alt=&quot;heart&quot; src=&quot;node_modules/emoji-images/pngs/heart.png&quot; height=&quot;30&quot; /&gt; and &lt;img class=&quot;emoji&quot; title=&quot;:trollface:&quot; alt=&quot;trollface&quot; src=&quot;node_modules/emoji-images/pngs/trollface.png&quot; height=&quot;30&quot; /&gt;</code></td><td class="md"><code id="tm2" class="tm">### Emoji test
+
+![heart](node_modules/emoji-images/pngs/heart.png &quot;:heart:&quot;)and![trollface](node_modules/emoji-images/pngs/trollface.png &quot;:trollface:&quot;)</code></td><td class="md"><code>### Emoji test ![heart](node_modules/emoji-images/pngs/heart.png) and ![trollface](node_modules/emoji-images/pngs/trollface.png)</code></td><td class="md"><code>### Emoji test
+
+![heart][0]
+
+and 
+
+![trollface][1]
+
+[0]: node_modules/emoji-images/pngs/heart.png
+[1]: node_modules/emoji-images/pngs/trollface.png</code></td></tr><tr><td>4</td><td><div class="wmquot">Have you seen this video</div><br />
+<br />
+llok...<br />
+<br />
+<object width='425' height='350'><param name='movie' value='http://www.youtube.com/v/6A5EpqqDOdk'></param><param name='wmode' value='transparent'></param><embed src='http://www.youtube.com/v/6A5EpqqDOdk' type='application/x-shockwave-flash' wmode='transparent' width='425' height='350'></embed></object></td><td><blockquote>
+<p>Have you seen this video</p>
+</blockquote>
+<p>llok...  </p>
+<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/6A5EpqqDOdk"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/6A5EpqqDOdk" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></object></td><td><p>Have you seen this video  </p>
+<p>llok...</p>
+</td><td><p>Have you seen this video</p>
+<p>llok...  </p>
+</td></tr><tr><td>4 SOURCE</td><td><code id="org3" data-idx="3" class="org">&lt;div class=&quot;wmquot&quot;&gt;Have you seen this video&lt;/div&gt;&lt;br /&gt;
+&lt;br /&gt;
+llok...&lt;br /&gt;
+&lt;br /&gt;
+&lt;object width=&#39;425&#39; height=&#39;350&#39;&gt;&lt;param name=&#39;movie&#39; value=&#39;http://www.youtube.com/v/6A5EpqqDOdk&#39;&gt;&lt;/param&gt;&lt;param name=&#39;wmode&#39; value=&#39;transparent&#39;&gt;&lt;/param&gt;&lt;embed src=&#39;http://www.youtube.com/v/6A5EpqqDOdk&#39; type=&#39;application/x-shockwave-flash&#39; wmode=&#39;transparent&#39; width=&#39;425&#39; height=&#39;350&#39;&gt;&lt;/embed&gt;&lt;/object&gt;</code></td><td class="md"><code id="tm3" class="tm">&gt; Have you seen this video
+
+llok...  
+
+&lt;object width=&quot;425&quot; height=&quot;350&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/6A5EpqqDOdk&quot;&gt;&lt;param name=&quot;wmode&quot; value=&quot;transparent&quot;&gt;&lt;embed src=&quot;http://www.youtube.com/v/6A5EpqqDOdk&quot; type=&quot;application/x-shockwave-flash&quot; wmode=&quot;transparent&quot; width=&quot;425&quot; height=&quot;350&quot;&gt;&lt;/object&gt;</code></td><td class="md"><code>Have you seen this video  
+  
+llok...</code></td><td class="md"><code>Have you seen this video
+
+  
+  
+llok...  
+  
+</code></td></tr><tr><td>5</td><td><B>Lorem Ipsum</B><br />
+<br />
+<div class="wmquot"><div class="wmquot"><a href="https://www.youtube.com/watch?v=ndKRjmA6WNA" target="_blank" rel="nofollow">This is interresting</a></div></div></td><td><p><strong>Lorem Ipsum</strong>  </p>
+<blockquote>
+<p><a href="https://www.youtube.com/watch?v=ndKRjmA6WNA">This is interresting</a></p>
+</blockquote>
+</td><td><p><strong>Lorem Ipsum</strong>  </p>
+<p><a href="https://www.youtube.com/watch?v=ndKRjmA6WNA">This is interresting</a></p>
+</td><td><p><strong>Lorem Ipsum</strong>  </p>
+<p><a href="https://www.youtube.com/watch?v=ndKRjmA6WNA">This is interresting</a></p>
+</td></tr><tr><td>5 SOURCE</td><td><code id="org4" data-idx="4" class="org">&lt;B&gt;Lorem Ipsum&lt;/B&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;div class=&quot;wmquot&quot;&gt;&lt;div class=&quot;wmquot&quot;&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ndKRjmA6WNA&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;This is interresting&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</code></td><td class="md"><code id="tm4" class="tm">**Lorem Ipsum**  
+
+&gt; 
+
+&gt; [This is interresting](https://www.youtube.com/watch?v=ndKRjmA6WNA)</code></td><td class="md"><code>**Lorem Ipsum**  
+  
+
+[This is interresting][0]
+
+[0]: https://www.youtube.com/watch?v=ndKRjmA6WNA</code></td><td class="md"><code>**Lorem Ipsum**  
+
+
+[This is interresting][0]
+
+[0]: https://www.youtube.com/watch?v=ndKRjmA6WNA</code></td></tr><tr><td>6</td><td>Hello,<br />
+<br />
+lorem ipsum:<br />
+<br />
+- dolor<br />
+- lorem<br />
+- ipsum<br />
+<br />
+</td><td><p>Hello,  </p>
+<p>lorem ipsum:  </p>
+<ul>
+<li>dolor  <ul>
+<li>lorem  </li>
+<li>ipsum</li>
+</ul>
+</li>
+</ul>
+</td><td><p>Hello,  </p>
+<p>lorem ipsum:  </p>
+<ul>
+<li>dolor  </li>
+<li>lorem  </li>
+<li>ipsum</li>
+</ul>
+</td><td><p>Hello,  </p>
+<p>lorem ipsum:  </p>
+<ul>
+<li>dolor  </li>
+<li>lorem  </li>
+<li>ipsum  </li>
+</ul>
+</td></tr><tr><td>6 SOURCE</td><td><code id="org5" data-idx="5" class="org">Hello,&lt;br /&gt;
+&lt;br /&gt;
+lorem ipsum:&lt;br /&gt;
+&lt;br /&gt;
+- dolor&lt;br /&gt;
+- lorem&lt;br /&gt;
+- ipsum&lt;br /&gt;
+&lt;br /&gt;
+</code></td><td class="md"><code id="tm5" class="tm">Hello,  
+
+lorem ipsum:  
+
+- dolor  
+ - lorem  
+ - ipsum</code></td><td class="md"><code>Hello,  
+  
+lorem ipsum:  
+  
+- dolor  
+- lorem  
+- ipsum</code></td><td class="md"><code>Hello,  
+  
+lorem ipsum:  
+  
+- dolor  
+- lorem  
+- ipsum  
+  
+</code></td></tr><tr><td>7</td><td><ul>
+	<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+	<li>Aliquam tincidunt mauris eu risus.</li>
+	<li>Vestibulum auctor dapibus neque.</li>
+</ul>
+</td><td><ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+<li>Vestibulum auctor dapibus neque.</li>
+</ul>
+</td><td><ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+<li>Vestibulum auctor dapibus neque.</li>
+</ul>
+</td><td><ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+<li>Vestibulum auctor dapibus neque.</li>
+</ul>
+</td></tr><tr><td>7 SOURCE</td><td><code id="org6" data-idx="6" class="org">&lt;ul&gt;
+	&lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+	&lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+	&lt;li&gt;Vestibulum auctor dapibus neque.&lt;/li&gt;
+&lt;/ul&gt;
+</code></td><td class="md"><code id="tm6" class="tm">*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+*   Aliquam tincidunt mauris eu risus.
+*   Vestibulum auctor dapibus neque.</code></td><td class="md"><code>* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+* Aliquam tincidunt mauris eu risus.
+* Vestibulum auctor dapibus neque.</code></td><td class="md"><code>* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+* Aliquam tincidunt mauris eu risus.
+* Vestibulum auctor dapibus neque.
+
+</code></td></tr><tr><td>8</td><td>
+<dl>
+	<dt>Definition list</dt>
+	<dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat.</dd>
+	<dt>Lorem ipsum dolor sit amet</dt>
+	<dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat.</dd>
+</dl>
+</td><td><dl>
+
+<dt>Definition list</dt>
+
+<dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+
+<dt>Lorem ipsum dolor sit amet</dt>
+
+<dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+
+</dl></td><td><p><strong>Definition list</strong></p>
+<blockquote>
+<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat.</p>
+</blockquote>
+<p><strong>Lorem ipsum dolor sit amet</strong></p>
+<blockquote>
+<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat.</p>
+</blockquote>
+</td><td><ul>
+<li>Definition list
+Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.- Lorem ipsum dolor sit amet
+Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+</ul>
+</td></tr><tr><td>8 SOURCE</td><td><code id="org7" data-idx="7" class="org">
+&lt;dl&gt;
+	&lt;dt&gt;Definition list&lt;/dt&gt;
+	&lt;dd&gt;Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat.&lt;/dd&gt;
+	&lt;dt&gt;Lorem ipsum dolor sit amet&lt;/dt&gt;
+	&lt;dd&gt;Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+commodo consequat.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></td><td class="md"><code id="tm7" class="tm">&lt;dl&gt;
+
+&lt;dt&gt;Definition list&lt;/dt&gt;
+
+&lt;dd&gt;Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/dd&gt;
+
+&lt;dt&gt;Lorem ipsum dolor sit amet&lt;/dt&gt;
+
+&lt;dd&gt;Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/dd&gt;
+
+&lt;/dl&gt;</code></td><td class="md"><code>**Definition list**
+
+&gt; Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+&gt; aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+&gt; commodo consequat.
+
+**Lorem ipsum dolor sit amet**
+
+&gt; Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+&gt; aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+&gt; commodo consequat.</code></td><td class="md"><code>- Definition list
+Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.- Lorem ipsum dolor sit amet
+Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</code></td></tr><tr><td>9</td><td><h1>HTML Ipsum Presents</h1>
+
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+<h2>Header Level 2</h2>
+
+<ol>
+	<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+	<li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+<h3>Header Level 3</h3>
+
+<ul>
+	<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+	<li>Aliquam tincidunt mauris eu risus.</li>
+</ul>
+
+<pre><code>
+#header h1 a { 
+	display: block; 
+	width: 300px; 
+	height: 80px; 
+}
+</code></pre>
+</td><td><h1 id="html-ipsum-presents">HTML Ipsum Presents</h1>
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+<h2 id="header-level-2">Header Level 2</h2>
+<ol>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+</blockquote>
+<h3 id="header-level-3">Header Level 3</h3>
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li><p>Aliquam tincidunt mauris eu risus.</p>
+<h1 id="header-h1-a-">header h1 a {</h1>
+<pre><code>display: block; 
+width: 300px; 
+height: 80px; 
+</code></pre><p>}</p>
+</li>
+</ul>
+</td><td><h1 id="html-ipsum-presents">HTML Ipsum Presents</h1>
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+<h2 id="header-level-2">Header Level 2</h2>
+<ol>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+</blockquote>
+<h3 id="header-level-3">Header Level 3</h3>
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+</ul>
+<pre><code>#header h1 a { 
+    display: block; 
+    width: 300px; 
+    height: 80px; 
+}
+</code></pre></td><td><h1 id="html-ipsum-presents">HTML Ipsum Presents</h1>
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+<h2 id="header-level-2">Header Level 2</h2>
+<ol>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+</blockquote>
+<h3 id="header-level-3">Header Level 3</h3>
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+</ul>
+<pre><code>#header h1 a { 
+    display: block; 
+    width: 300px; 
+    height: 80px; 
+}
+</code></pre></td></tr><tr><td>9 SOURCE</td><td><code id="org8" data-idx="8" class="org">&lt;h1&gt;HTML Ipsum Presents&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Pellentesque habitant morbi tristique&lt;/strong&gt; senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. &lt;em&gt;Aenean ultricies mi vitae est.&lt;/em&gt; Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, &lt;code&gt;commodo vitae&lt;/code&gt;, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. &lt;a href=&quot;#&quot;&gt;Donec non enim&lt;/a&gt; in turpis pulvinar facilisis. Ut felis.&lt;/p&gt;
+
+&lt;h2&gt;Header Level 2&lt;/h2&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+	&lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h3&gt;Header Level 3&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+	&lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;
+#header h1 a { 
+	display: block; 
+	width: 300px; 
+	height: 80px; 
+}
+&lt;/code&gt;&lt;/pre&gt;
+</code></td><td class="md"><code id="tm8" class="tm"># HTML Ipsum Presents
+
+**Pellentesque habitant morbi tristique** senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. _Aenean ultricies mi vitae est._ Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, `commodo vitae`, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. [Donec non enim](#) in turpis pulvinar facilisis. Ut felis.
+
+## Header Level 2
+
+1.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+2.  Aliquam tincidunt mauris eu risus.
+
+&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
+
+### Header Level 3
+
+*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+*   Aliquam tincidunt mauris eu risus.
+
+    #header h1 a { 
+    	display: block; 
+    	width: 300px; 
+    	height: 80px; 
+    }</code></td><td class="md"><code># HTML Ipsum Presents
+
+**Pellentesque habitant morbi tristique** senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. _Aenean ultricies mi vitae est._ Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, `commodo vitae`, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. [Donec non enim][0] in turpis pulvinar facilisis. Ut felis.
+
+## Header Level 2
+
+1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+2. Aliquam tincidunt mauris eu risus.
+
+&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
+
+### Header Level 3
+
+* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+* Aliquam tincidunt mauris eu risus.
+
+    
+    #header h1 a { 
+    	display: block; 
+    	width: 300px; 
+    	height: 80px; 
+    }
+    
+
+
+
+[0]: #</code></td><td class="md"><code># HTML Ipsum Presents
+
+**Pellentesque habitant morbi tristique** senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. _Aenean ultricies mi vitae est._ Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. [Donec non enim][0] in turpis pulvinar facilisis. Ut felis.
+
+## Header Level 2
+
+1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+1. Aliquam tincidunt mauris eu risus.
+
+
+&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
+
+### Header Level 3
+
+* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+* Aliquam tincidunt mauris eu risus.
+
+    
+    #header h1 a { 
+    	display: block; 
+    	width: 300px; 
+    	height: 80px; 
+    }
+    
+
+
+
+[0]: #</code></td></tr>	</table>
+</body>
+</html>
